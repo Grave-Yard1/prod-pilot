@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+*.db
+backend/data/
+frontend/test-results/
+frontend/playwright-report/
+frontend/blob-report/
+.DS_Store
+*.tsbuildinfo
