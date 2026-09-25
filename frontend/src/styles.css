@@ -413,6 +413,26 @@ fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
   border: 0;
 }
 
+.call-plate, .tile, .glance a, .history a, .handoff-list a, .nav-link, .chip, .persona-btn, .call, .submit, .text-action, .back, .evidence-title a {
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease, transform 140ms ease, box-shadow 140ms ease, filter 140ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .call-plate:hover { transform: translateY(-2px); box-shadow: 0 22px 56px rgba(0, 0, 0, 0.45); }
+  .tile:hover { border-color: #56644f; background: #212821; transform: translateY(-1px); }
+  .tile.alarm:hover { border-color: #9a3c36; }
+  .tile.watch:hover { border-color: #9a7722; }
+  .glance a:hover, .history a:hover, .handoff-list a:hover { border-color: #56644f; background: #222a22; }
+  .nav-link:not(.active):hover { color: var(--ink); background: rgba(243, 238, 228, 0.06); }
+  .chip:not(.active):hover, .persona-btn:not(.active):hover { border-color: #6b7866; color: var(--ink); }
+  .call:not(:disabled):hover { filter: brightness(1.08); transform: translateY(-1px); }
+  .submit:not(:disabled):hover, .text-action:hover { filter: brightness(0.95); transform: translateY(-1px); }
+  .back:hover { color: var(--ink); }
+  .evidence-title a:hover { color: #8a5a00; }
+}
+
+.call:disabled, .submit:disabled { opacity: 0.6; cursor: wait; }
+
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
   outline: 3px solid var(--watch);
   outline-offset: 2px;
@@ -458,4 +478,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 @media (prefers-reduced-motion: reduce) {
   .lamp.alarm { box-shadow: none; }
+  * { transition: none !important; }
+  .call-plate:hover, .tile:hover, .call:hover, .submit:hover, .text-action:hover { transform: none !important; }
 }
